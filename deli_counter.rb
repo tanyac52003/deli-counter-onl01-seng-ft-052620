@@ -1,12 +1,13 @@
 # Write your code here.
 
 def line(katz_deli)
-  new_array = []
-  if katz_deli.length == 0 
-    puts "The line is currently empty."
+  new_array = katz_deli.map.with_index(1) do |customer, index|
+    "#{index}. #{customer}"
+  end 
+  if katz_deli.length > 0 
+    puts "The line is currently: #{new_array.join(" ")}"
   else 
-    katz_deli.each_with_index {|line_member, i| 
-      puts "The line is currently: #{i + 1}. #{line_member}"}
+    puts "The line is currently empty."
   end 
 end 
 
